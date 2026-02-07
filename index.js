@@ -145,6 +145,38 @@ client.on("messageCreate", async (message) => {
   }
 
   // ===== CONSULTAR FICHA =====
+  if (message.content === "?rpgconsultarfichas") {
+  const ids = Object.keys(fichas);
+
+  if (ids.length === 0) {
+    return message.reply("Não existe nenhuma ficha criada.");
+  }
+
+  const embed = new EmbedBuilder()
+    .setTitle("📜 Todas as Fichas de RPG")
+    .setColor("Blue");
+
+  for (const id of ids) {
+    const f = fichas[id];
+
+    embed.addFields({
+      name: `🆔 ID: ${id} — ${f.nome}`,
+      value:
+        `❤️ Vida: ${f.vida}\n` +
+        `✨ Encantamento: ${f.encantamento}\n` +
+        `🔮 Energia: ${f.energia}\n` +
+        `🛡 Domínio Simples: ${f.dominioSimples}\n` +
+        `🌌 Expansão: ${f.expansao}\n` +
+        `⚔ Arma: ${f.arma}\n` +
+        `💪 Força: ${f.forca}\n` +
+        `💨 Velocidade: ${f.velocidade}\n` +
+        `🧱 Resistência: ${f.resistencia}`,
+    });
+  }
+
+  message.channel.send({ embeds: [embed] });
+}
+
   if (message.content.startsWith("?rpgconsultarficha")) {
     const args = message.content.split(" ");
     const id = args[1];
@@ -171,6 +203,9 @@ client.on("messageCreate", async (message) => {
 
     message.channel.send({ embeds: [embed] });
   }
+
+
+
 });
 
 client.login(TOKEN);

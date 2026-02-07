@@ -29,12 +29,20 @@ client.on("messageCreate", async (message) => {
     message.reply("pong 🏓");
   }
 
+  const ROLE_ID = "1469689840982425670";
+
   // ===== CRIAR FICHA =====
   if (message.content === "?rpgfichacriar") {
+    // Verifica se o membro tem a role
+    if (!message.member.roles.cache.has(ROLE_ID)) {
+      return message.reply(
+        ":x: Você não tem permissão para usar este comando!"
+      );
+    }
+
     const filter = (m) => m.author.id === message.author.id;
 
     try {
-      // Perguntas
       await message.reply("Qual ID da ficha?");
 
       let id;

@@ -185,21 +185,21 @@ client.on("messageCreate", async (message) => {
     const f = fichas[id];
     if (!f) return message.reply("Ficha não encontrada.");
 
-    const embed = new EmbedBuilder()
-      .setTitle(`Ficha de ${f.nome}`)
-      .addFields([
-        { name: "ID", value: id, inline: true },
-        { name: "Vida", value: f.vida, inline: true },
-        { name: "Encantamento", value: f.encantamento, inline: true },
-        { name: "Energia Amaldiçoada", value: f.energia, inline: true },
-        { name: "Domínio Simples", value: f.dominioSimples, inline: true },
-        { name: "Expansão de Domínio", value: f.expansao, inline: true },
-        { name: "Arma", value: f.arma, inline: true },
-        { name: "Força", value: f.forca, inline: true },
-        { name: "Velocidade", value: f.velocidade, inline: true },
-        { name: "Resistência", value: f.resistencia, inline: true },
-      ])
-      .setColor("Blue");
+   const embed = new EmbedBuilder()
+  .setTitle(`Ficha de ${f.nome}`)
+  .addFields([
+    { name: "🆔 ID", value: id, inline: true },
+    { name: "❤️ Vida", value: String(f.vida), inline: true },
+    { name: "✨ Encantamento", value: String(f.encantamento), inline: true },
+    { name: "🔮 Energia Amaldiçoada", value: String(f.energia), inline: true },
+    { name: "🛡️ Domínio Simples", value: String(f.dominioSimples), inline: true },
+    { name: "🌌 Expansão de Domínio", value: String(f.expansao), inline: true },
+    { name: "⚔️ Arma", value: String(f.arma), inline: true },
+    { name: "💪 Força", value: String(f.forca), inline: true },
+    { name: "💨 Velocidade", value: String(f.velocidade), inline: true },
+    { name: "🧱 Resistência", value: String(f.resistencia), inline: true },
+  ])
+  .setColor("Blue");
 
     message.channel.send({ embeds: [embed] });
   }

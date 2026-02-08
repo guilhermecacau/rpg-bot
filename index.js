@@ -177,7 +177,7 @@ client.on("messageCreate", async (message) => {
   message.channel.send({ embeds: [embed] });
 }
 
-  if (message.content.startsWith("?rpgconsultarficha")) {
+  if (message.content.startsWith("?rpgconsultarficha ")) {
     const args = message.content.split(" ");
     const id = args[1];
     if (!id) return message.reply("Use: ?rpgconsultarficha <ID>");

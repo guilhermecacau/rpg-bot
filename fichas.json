@@ -1,11 +1,5 @@
 {
   "1": {
-    "nome": "Gui",
-    "vida": "45",
-    "energia": "Muita",
-    "arma": "Faquinha do toji"
-  },
-  "2": {
     "nome": "Kakitos (teste)",
     "vida": "67",
     "encantamento": "Restrição celestial",

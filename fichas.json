@@ -1,5 +1,17 @@
 {
   "1": {
+    "nome": "Gui (teste)",
+    "vida": "67",
+    "encantamento": "Restrição celestial",
+    "energia": "Absurdíssima",
+    "dominioSimples": "Sim",
+    "expansao": "Não",
+    "arma": "Nenhuma",
+    "forca": "Absurda",
+    "velocidade": "Normal",
+    "resistencia": "Boa"
+  },
+  "2": {
     "nome": "Kakitos (teste)",
     "vida": "67",
     "encantamento": "Restrição celestial",
